@@ -37,14 +37,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'http://gitlab.idcos.com/shenzhongkang/jet-dev-docs',
+            'https://github.com/idcos/jet-dev-docs',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'http://gitlab.idcos.com/shenzhongkang/jet-dev-docs',
+            'https://github.com/idcos/jet-dev-docs',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -71,7 +71,7 @@ const config = {
           },
           // {to: '/blog', label: '文章', position: 'left'},
           {
-            href: 'http://gitlab.idcos.com/shenzhongkang/jet-dev-docs',
+            href: 'https://github.com/idcos/jet-dev-docs',
             label: 'GitLab',
             position: 'right'
           },
@@ -115,7 +115,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'http://gitlab.idcos.com/shenzhongkang/jet-dev-docs',
+                href: 'https://github.com/idcos/jet-dev-docs',
               },
             ],
           },
