@@ -13,7 +13,7 @@ sidebar_label: 'script-includes'
 
 script-includes是 UI 脚本的服务器端等价物（我们将在下一章中详细了解），因为它们实际上是存在于给定应用程序范围内的服务器上的有效代码块。
 
-每个脚本包含在 ServiceNow 中定义一个类或函数，可从其范围内的任何服务器端脚本访问。脚本包含记录本身的名称必须与`Script`记录字段中的函数或类的名称匹配，因为这也是 API 名称。
+每个脚本包含在 JET 中定义一个类或函数，可从其范围内的任何服务器端脚本访问。脚本包含记录本身的名称必须与`Script`记录字段中的函数或类的名称匹配，因为这也是 API 名称。
 
 脚本包含可以在应用程序导航器中的**系统定义**|下找到。**script-includes**.
 
@@ -57,7 +57,7 @@ var esi = new ExampleScriptInclude('arg value');
 
 使用前面的代码，局部变量`constructorArg`将被设置为`'arg value'`，并且可用于类中的任何其他函数`this.constructorArg`。
 
-尽可能不要修改开箱即用的 ServiceNow 脚本包含。相反，创建一个副本并在其中包含您的更改。要添加功能而不是修改它，您还可以通过更改类似于以下代码突出显示部分的声明来扩展现有脚本包含，这扩展了 OOB（开箱即用）`Cart`script-includes：
+尽可能不要修改开箱即用的 JET 脚本包含。相反，创建一个副本并在其中包含您的更改。要添加功能而不是修改它，您还可以通过更改类似于以下代码突出显示部分的声明来扩展现有脚本包含，这扩展了 OOB（开箱即用）`Cart`script-includes：
 
 ```
 var test = Class.create();

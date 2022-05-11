@@ -10,7 +10,7 @@ JET中的角色对应于特定的权限集。它们授予对平台内模块的�
 
 角色存储在**Role**[sys_user_role]表中，可以在应用程序导航器的用户管理|角色下找到。角色和用户以及角色和组之间的关联分别存储在**用户角色**[sys_user_has_role]和**组权限**[sys_group_has_role]表中。角色本身就是相当简单的记录，因为它们主要由名称和描述组成。如果选中了提升权限复选框，则某些角色需要提升。前面提到的security_admin角色就是这样一个例子。可以通过左键单击JET界面右上角的头像并单击角色提权来实现：
 
-![角色提权](../../static/img/user-administration-and-security/elvate-role.png)
+![角色提权](/img/user-administration-and-security/elvate-role.png)
 
 角色可以根据需要创建，并且本质上不具有对 JET 中任何内容的访问权限。但是，JET中的某些记录将具有**用户角色**字段，该字段允许您选择查看或访问特定模块、应用程序或对象所需的角色。您还可以使用角色来控制对UI元素的访问，例如UI操作，甚至可以使用g_user.hasRole(‘role_name’)在客户端脚本上使用来控制脚本内的行为；或gs.hasRole()'role_name')在服务器上。这些方法都返回布尔值true或false，允许您根据执行操作的用户是否具有给定角色来控制其他脚本的行为和流程。
 
@@ -22,7 +22,7 @@ gs.hasRole()是一个简单的 API，它接受一个参数：一个带有您要�
 
 此外，还可以通过在某些记录类型上使用**用户角色**相关列表来请求角色：
 
-![用户角色](../../static/img/user-administration-and-security/userRole.png)
+![用户角色](/img/user-administration-and-security/userRole.png)
 
 **注意**：
 
@@ -34,7 +34,7 @@ gs.hasRole()是一个简单的 API，它接受一个参数：一个带有您要�
 
 就像在用户记录上一样，您可以通过修改组记录底部与角色相关的列表，将角色授予组（从而授予该组的所有成员）：
 
-![用户组](../../static/img/user-administration-and-security/userGroup.png)
+![用户组](/img/user-administration-and-security/userGroup.png)
 
 ## 
 
