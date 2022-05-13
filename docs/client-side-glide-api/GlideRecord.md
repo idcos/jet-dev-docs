@@ -18,17 +18,18 @@ GlideRecord 类是 JET 中最无处不在和最有用的类之一，它的主要
 - insert()
 - next()
 - query()
-- setLimit()
+- setLimit()  
+
+***注：getEncodedQuery()、getLimit()、setLimit()暂未实现***
 
 在本节中，我们将了解其中一些常用的方法，这些方法与服务器端表亲不同。这意味着我们不会重新构建 addQuery()等方法，这些方法的行为与服务器端脚本中的行为大致相同。
 
-#### 参考示例：  
-查询
+### 参考示例
+addQuery()  查询  
 ```
 var now_GR = new GlideRecord('java_developer');
 now_GR.addQuery('name', 'java2'); // Name is java2
 now_GR.query(response);
- 
 function response(result, answer) {
     while(result.next()) {
        // Print all name is java2
@@ -36,7 +37,7 @@ function response(result, answer) {
     }
 }
 ```
-删除
+deleteRecord()  删除
 ```
 var recordGR = new GlideRecord('java_developer');
 if (recordGR.get('sys_id')) {
@@ -47,3 +48,65 @@ function response(result) {
   alert('Deleted record sys_id: ' + result.getValue('sys_id'));
 }
 ```
+get()  查询单条记录  
+```
+var user = new GlideRecord('sys_user');
+// 发起查询
+user.get(newValue);
+user.query(response);
+function response(result, answer) {
+    while (result.next()) {
+        // 工号
+        g_form.setValue('employee_number', result.getValue('employee_number'));
+    }
+}
+```
+getTableName()  获取当前的 tableName  
+```
+var item = new GlideRecord('sc_request'); 
+item.addQuery('sys_id', current.request); 
+item.query(itemResponse); 
+ 
+function itemResponse(item) {
+   alert('The table is ' + item.getTableName());
+}
+```
+hasNext()  是否迭代代最后  
+```
+var user = new GlideRecord('java_developer');
+user.addQuery('user', = , user);
+user.query();
+while(user.hasNext()){
+    consloe.log(user.next());
+}
+```
+insert()  新增记录   
+```
+var now_GR = new GlideRecord('incident');
+now_GR.short_description = 'Learn about GlideRecord';
+var recResponse = now_GR.insert(handleResponse);
+
+function handleResponse(recResponse, answer) {
+// Answer will be the sys_id of the created record or null
+alert('Newly created sys_id is - ' + answer + ' exists');
+}
+```
+next()  迭代器用  
+```
+var rec = new GlideRecord('incident');
+rec.query(recResponse);
+ 
+function recResponse(rec) {
+  while (rec.next()) { 
+    alert(rec.number + ' exists');
+  }
+}
+```
+query()  执行查询  
+```
+var grArticle = new GlideRecord('java_developer');
+var sys_id = g_form.getValue('sys_id');
+    grArticle.addQuery('sys_id', '=', sys_id);
+    grArticle.query();
+```
+

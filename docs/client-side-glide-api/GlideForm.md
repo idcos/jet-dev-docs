@@ -5,7 +5,7 @@ sidebar_label: 'GlideForm(g_form)'
 GlideForm API在客户端脚本中作为对象变量 g_form 公开。此API提供了与**表单和字段交互、为用户添加消息、从下拉字段中添加和删除选项等方法**，g_form是表单页面对象，可以**获取**表单项的值，**设置**表单项的值，**控制**表单项的**显示、隐藏或只读**状态等。  
 下面，我们将讨论 GlideForm API 的一些更常用和有用的方法，并了解如何使用它们。
 ### 在表单和字段上设置/清除消息（暂未实现）  
-有多种方法可以设置和清除表单中的消息，这两种方法在用户界面都可以看得到（类似于服务器端 API 的行为：gs.addInfoMessage()和 gs.addErrorMessage()），以及针对特定字段。
+有多种方法可以设置和清除表单中的消息，这两种方法都位于用户界面的顶部（类似于服务器端 API ：gs.addInfoMessage()和 gs.addErrorMessage()），以及针对特定字段。
 这些方法是：showFieldMsg（）、hideFieldMsg（）、showErrorBox（） 和 hideErrorBox（）。
 g_form API 的这些方法对于从客户端脚本或 UI 策略向用户传达信息（如字段是否满足某些验证条件）非常有用。
 GlideForm （g_form） API 的一组字段级方法是 showFieldMsg（） 和 hideFieldMsg（），以及几乎相同的 showErrorBox（） 和 hideErrorBox（）。这些 API 非常适合在 onChange 客户端脚本中使用，如以下示例所示：
@@ -21,8 +21,8 @@ if (closedDate > now) {
 }
 ```
 在前面的示例中，我们首先声明一个新的 JavaScript Date 对象，该对象现在会自动初始化为日期和时间。
-接下来，我们声明一个新的 Date 对象，并使用 closed_at 字段的当前值对其进行初始化。然后，我们调用 setHours()方法并传入 0，0，0，0，这会将 closedDate 变量设置为所选日期的 12:00 AM（00:00 小时），以便在第 4 行上比较两个声明的 Date 对象。如果closed_at字段的值晚于今天，我们将清除任何其他字段消息（以避免重复消息），并显示一个字段消息，询问用户是否是时间旅行者。否则，我们会清除任何现有的字段消息。
-请注意，在第 5 行，我们在添加字段消息之前调用 hideFieldMsg（另一个g_form API）。这是因为否则，如果用户一遍又一遍地修改字段，他们将获得越来越多的字段消息堆叠在一起。
+接下来，我们声明一个新的 Date 对象，并使用 closed_at 字段的当前值对其进行初始化。然后，我们调用 setHours()方法并传入 0，0，0，0，这会将 closedDate 变量设置为所选日期的 12:00 AM（00:00 小时），以便在第 4 行上比较两个声明的 Date 对象。如果closed_at字段的值晚于今天，我们将清除任何其他字段消息（以避免重复消息），并显示一个字段消息，询问用户“Are you a time traveler?”，否则，我们会清除任何现有的字段消息。
+请注意，在第 5 行，我们在添加字段消息之前调用 hideFieldMsg（另一个g_form API）。这是因为，如果用户一遍又一遍地修改字段，他们将获得越来越多的字段消息堆叠在一起。
 ### 处理下拉列表字段（暂未实现）  
 表单中的下拉字段，类似于引用字段，可以同时具有值和显示值。例如，基于任务的表表单上的状态字段（如事件表单）有一组状态选项，名称如 New、In Progress 和 Resolved。
 然而，与这些选择标签关联的实际值是一个整数。事实上，状态字段是一个特定的数字类型字段。这意味着，尽管下拉菜单中显示标签/显示值，但如果我们调用 g_form.getValue('state')，我们将得到一个数字值，而不是我们在表单中看到的标签。
@@ -54,7 +54,7 @@ addOption() 方法可以用三个参数调用，第四个可选参数：
 然而，在决定是否创建具有多个字段的表单视图并依赖客户端逻辑来隐藏它们时，重要的是要明智，而不是简单地对不同情况使用不同的视图。这是因为每个字段（即使被客户端逻辑隐藏）也必须加载表单。这增加了用户网络和浏览器的负载。对于少数几个字段来说，这几乎不明显，但是，如果您要加载 40 个字段，而表单在除少数情况之外的所有情况下都隐藏，则这可能是不好的做法。
 
 JET 中的客户端脚本上有两种 g_form API 的方法，我们将在本章中讨论：**setVisibile() 和 setDisplay()**。
-g_form 对象的 setVisible（） 方法接受两个参数：字段名称，后跟一个布尔值，该值指示字段是否应可见。如果第二个参数为 true，则该字段将变为或保持可见。如果为 false ，则变为或保持不可见，一旦不可见，字段曾经所在的块将保持空，从而在表单中留下间隙。
+g_form 对象的 setVisible() 方法接受两个参数：字段名称，后跟一个布尔值，该值指示字段是否应可见。如果第二个参数为 true，则该字段将变为或保持可见，如果为 false ，则变为或保持不可见，一旦不可见，字段曾经所在的块将保持空，从而在表单中留下间隙。
 ```
 g_form.setVisible('cmdb_ci', false); //使字段不可见
 ```
@@ -62,6 +62,12 @@ setDisplay() 方法的工作方式完全相同，但不是留下间隙，而是�
 ```
 g_form.setDisplay('cmdb_ci', false); //完全隐藏字段和块
 ```
+**参考效果**  
+![设置字段不可见代码](/img/client-side-glide-api/setdisplayCode.png) 
+![设置字段不可见1](/img/client-side-glide-api/setDisplay1.png)  
+隐藏字段后的效果为  
+
+![设置字段不可见2](/img/client-side-glide-api/setDisplay2.png)  
 字段可见性可以从客户端脚本和UI策略中控制。也就是说，只要有可能，最好使用UI策略来控制字段可见性，而不是客户端脚本。这是因为UI策略对性能的影响略低，也更优化。
 ### 获取和设置表单上的值
 ***注：getReference方法暂未实现***  
@@ -72,7 +78,7 @@ g_form.setDisplay('cmdb_ci', false); //完全隐藏字段和块
 ```
 g_form.getValue('assigned_to'); //返回所分配用户的sys_id
 ```
-正如您所料，g_form 类的 **setValue()** 方法与 getValue() 方法正好相反。它接受两个参数而不是一个参数（字段名称，后跟新字段值），并将字段设置为表单中的新值。
+正如您所料，g_form 类的 **setValue()** 方法与 getValue() 方法正好**相反**。它接受两个参数而不是一个参数（字段名称，后跟新字段值），并将字段设置为表单中的新值。
 示例：
 ```
 g_form.setValue('state', '7'); // 将状态字段设置为关闭
@@ -92,9 +98,9 @@ g_form.getReference('cmdb_ci', function(grCI) {
 ```
 在前面的示例中，我们从 cmdb_ci 字段获取引用记录。然后，我们以这种形式获得记录的类别，以及引用的 CI 中的 sys_class_name。
 最后，我们检查CI是否是服务器。如果是，但表单上选择的类别不是硬件，我们确保将其设置为该类别。这样，如果您选择的CI是服务器，则必须选择硬件作为类别。像这样的脚本在更改客户端脚本中最有效，每当 cmdb_ci 字段更新时都会运行。
-### 设置必填字段和只读字段
+### 设置字段必填或已读
 控制用户是否可以修改字段值以及字段值是否需要，可以使用 GlideForm(g_form) API 的两种方法分别完成：**setReadOnly()** 和 **setMandatory()**。
-setReadOnly() 和 setMandatory() 都接受两个参数：字段名称和指示字段是否应为**必读/只读**的布尔值。
+setReadOnly() 和 setMandatory() 都接受两个参数：字段名称和指示字段是否应为**必填/只读**的布尔值。
 ```
 g_form.setReadOnly('business_service', true);
 g_form.setMandatory('cmdb_ci', true);
@@ -103,7 +109,7 @@ g_form.setMandatory('cmdb_ci', true);
 默认情况下，当表单上的引用字段设置为只读时，引用图标将消失。但是，可以通过修改系统属性来撤消此行为：glide.ui.reference.readonly.clickthrough。
 这两种方法都不返回值。
 ### 提交客户端表单
-***注：action.setRedirectUrl 、  save方法暂未实现***  
+***注：action.setRedirectUrl 、 save方法暂未实现***  
 
 基于表单的客户端脚本可以使用两种 GlideForm(g_form)方法之一提交表单（以及当时其中包含的任何更改）：**save()和 submit()**。
 
