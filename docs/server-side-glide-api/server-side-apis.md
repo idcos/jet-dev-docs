@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-sidebar_label: 'structure-api-class'
+sidebar_label: '服务端API'
 ---
 # 服务端API
 

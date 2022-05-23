@@ -1,7 +1,8 @@
 ---
 sidebar_position: 1
-sidebar_label: 'ui-policies'
+sidebar_label: '界面策略'
 ---
+# 界面策略
 界面策略是一种对用户友好的方式来控制表单上的字段是必填的、可见的或者只读的。界面策略本身位于**UI Policy** [ `sys_ui_policy`]表中，由一组条件简短、与另一条记录或一组记录的关系以及其他一些零碎的东西组成。但是，它不包含有关要执行的**操作的信息：**
 
 ![image-20220510110150846](/img/ui-data-policies/ui_pilicies.assets/image-20220510110150846.png)
