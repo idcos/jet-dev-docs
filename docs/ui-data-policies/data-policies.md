@@ -1,8 +1,8 @@
 ---
 sidebar_position: 5
-sidebar_label: 'data-policies'
+sidebar_label: '数据策略'
 ---
-# 数据政策（Data policies）
+# 数据策略
 
 数据策略的功能，它不同于界面策略，它是在服务器上执行的。他在功能上与界面策略密切相关。在实际中，它们甚至可以当作界面策略（但是功能有限）。
 

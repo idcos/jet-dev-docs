@@ -1,7 +1,9 @@
 ---
 sidebar_position: 4
-sidebar_label: 'ui-policy-order'
+sidebar_label: '界面策略顺序'
 ---
+# 界面策略顺序
+
 **UI Policies**上的**顺序**字段（就像在其他脚本上一样）非常重要，因为它决定了 界面策略如何处理和优先处理操作。当两个 界面策略包含作用于同一字段的 界面策略操作时即使它们作用于该字段的不同属性（例如，可见与只读）它们可能会发生冲突。 ~~有冲突的 界面策略操作将显示在 界面策略的相关列表中，并用红点指示问题：~~
 
 ![UI 政策令](/img/ui-data-policies/ui-policy-order.assets/00135.jpeg)

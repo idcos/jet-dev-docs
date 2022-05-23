@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-sidebar_label: 'structure-api-class'
+sidebar_label: 'API类的结构'
 ---
 
 # API类的结构

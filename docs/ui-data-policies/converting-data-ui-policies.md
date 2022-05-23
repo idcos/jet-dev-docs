@@ -1,8 +1,8 @@
 ---
 sidebar_position: 6
-sidebar_label: 'converting-data-ui-policies.'
+sidebar_label: '数据策略和界面策略之间转换'
 ---
-# 6.数据策略和界面策略之间转换（Converting a data policy to a UI policy）
+# 数据策略和界面策略之间转换
 
 通常我们可以将界面策略转换为数据策略，反之亦然。在界面策略表单中，您会发现一个名为**Convert this to Data Policy**的 UI 操作，在数据策略表单中，会发现一个名为**Convert this to UI Policy**的UI操作。
 

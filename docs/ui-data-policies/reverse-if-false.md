@@ -1,7 +1,9 @@
 ---
 sidebar_position: 2
-sidebar_label: 'reverse-if-false'
+sidebar_label: '不符合撤回'
 ---
+# 不符合撤回
+
 **Reverse if false**复选框允许我们指定与界面策略关联的**界面策略操作**在与其父策略关联的条件未评估为真时反转其操作。
 
 <!-- ![image-20220510153344985](../../static/img/scripting-in-ui-policies.assets/image-20220510114125407.png) -->
