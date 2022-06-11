@@ -1,4 +1,4 @@
 ---
 sidebar_position: 2
-sidebar_label: 'GlideAjax'
+sidebar_label: 'security'
 ---

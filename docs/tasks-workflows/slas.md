@@ -1,5 +1,4 @@
 ---
 sidebar_position: 5
-sidebar_label: '服务水平协议(未实现)'
+sidebar_label: 'slas'
 ---
-### 敬请期待
