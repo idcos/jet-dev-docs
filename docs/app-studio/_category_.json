@@ -1,8 +1,8 @@
 {
-  "label": "app studio",
+  "label": "Studio",
   "position": 13,
   "link": {
     "type": "generated-index",
-    "description": "app studio"
+    "description": "studio"
   }
 }
