@@ -40,7 +40,15 @@ sidebar_label: 'Studio 简介'
 
 ![studio](/img/studio/20220607105959.jpg)
 
+## 搜索文件
 
+导航到**打开文件**窗口，可以对应用文件进行搜索
 
+![studio](/img/studio/搜索文件.png)
 
+## 记录搜索
+
+导航到**记录搜索**窗口，可以对逻辑表的记录进行搜索
+
+![studio](/img/studio/20220614140534.jpg)
 
