@@ -51,4 +51,3 @@ sidebar_label: 'Studio 简介'
 导航到**记录搜索**窗口，可以对逻辑表的记录进行搜索
 
 ![studio](/img/studio/20220614140534.jpg)
-
