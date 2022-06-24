@@ -33,7 +33,7 @@ JET平台选择JavaScript为脚本语言，使用**Rhino**作为服务端脚本�
 JET平台表达式语言，分为Client-Side和Server-Side：
 ![核心的方法](/img/intro/intro-5.png)<br>
 其中GlideRecord封装对数据库操作。
-![GlideRecord](/img/intro/GLideRecord.png)
+![GlideRecord](/img/intro/GlideRecord.png)
 
 ## 界面操作
 主要针对的是在表单和列表上添加按钮、链接和上下文菜单项，使UI更具交互性、可自定义性，并且满足特定的用户活动。
