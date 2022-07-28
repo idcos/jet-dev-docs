@@ -1,0 +1,8 @@
+{
+  "label": "CMDB",
+  "position": 18,
+  "link": {
+    "type": "generated-index",
+    "description": "cmdb"
+  }
+}
